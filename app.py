@@ -213,10 +213,6 @@ def update_like():
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
         return redirect(url_for('home'))
 
-@app.route('/about', methods=['GET'])
-def about():
-    return render_template('about.html')
-
 @app.route('/secret', methods=['GET'])
 def secret():
     token_receive = request.cookies.get(TOKEN_KEY)
